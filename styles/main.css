@@ -1,5 +1,32 @@
+header {
+
+}
+.siteLogo {
+
+}
+.name {
+
+}
+.siteTitle {
+    
+}
+
 .journalmain{
     display: flex;
     flex-direction: column;
     
+}
+.journalDate {
+
+
+}
+
+.journalConcepts {
+
+}
+.journalEntry {
+
+}
+.journalMood {
+
 }
