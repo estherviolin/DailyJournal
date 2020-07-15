@@ -4,55 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Journal</title>
-    <link rel="stylesheet" href=".styles/main.css"
+    <link rel="stylesheet" href="./styles/main.css"
 </head>
 <body>
     <header>
         <!-- add logo -->
         <img class="siteLogo" src=""/>
         <h2 class="name">Esther Sanders</h2>
-    </header>
-    <main class="journalmain">
-        <!-- decide classes -->
-        <h2 class ="siteTitle">Daily Journal</h2>
-        <form action="" class="journalDate" >
-            <fieldset>
-                <label for="journalDate">Date of Entry</label>
-                <input type="date" name="journalDate" id="journalDate">
-            </fieldset>
-        </form>
-        <form action="" class="journalConcepts" >
-            <fieldset>
-                <label for="journalConcepts">Concepts</label>
-                <input type="text" name="journalconcepts" id="journalconcepts">
-            </fieldset>
-        </form>
-        <form action="" class="journalEntry" >
-            <fieldset>
-                <label for="journalentry">Journal Entry</label>
-                <input type="textarea" name="journalEntry" id="journalEntry">
-            </fieldset>
-        </form>
-        <form action="" class="journalMood" >
-            <fieldset>
-                <label for="journalMood">Mood</label>
-                <input type="option" name="journalMood" id="journalMood">
-            </fieldset>
-        </form>
-    </main>
-    <div class="pageright">
-        <h2>Previous Entries</h2>
-        <ul class="list">
-            <li class="list--item"></li>
-            <li class="list--item"></li>
-            <li class="list--item"></li>
-            <li class="list--item"></li>
-        </ul>
-    </div>
-    <div class="buttons">
-        <button class="button--post"></button>
-        <button class="button--delete"></button>
-        <button class="button--edit"></button>
+</header>
+    <div class="content">
+        <main class="journalmain">
+            <div class="pageleft">
+            <!-- decide classes -->
+                <h2 class ="siteTitle">Daily Journal</h2>
+                <form action="" class="journalDate" >
+                    <fieldset>
+                        <label for="journalDate">Date of Entry</label>
+                        <input type="date" name="journalDate" id="journalDate">
+                    </fieldset>
+                </form>
+                <form action="" class="journalConcepts" >
+                    <fieldset>
+                        <label for="journalConcepts">Concepts</label>
+                        <input type="text" name="journalconcepts" id="journalconcepts">
+                    </fieldset>
+                </form>
+                <form action="" class="journalEntry" >
+                    <fieldset>
+                        <label for="journalentry">Journal Entry</label>
+                        <input type="textarea" name="journalEntry" id="journalEntry">
+                    </fieldset>
+                </form>
+                <form action="" class="journalMood" >
+                    <fieldset>
+                        <label for="journalMood">Mood</label>
+                        <input type="option" name="journalMood" id="journalMood">
+                    </fieldset>
+                </form>
+            </div>
+        </main>
+        <div class="pageright">
+                <h2>Previous Entries</h2>
+                <ul class="list">
+                    <li class="list--item"></li>
+                    <li class="list--item"></li>
+                    <li class="list--item"></li>
+                    <li class="list--item"></li>
+                </ul> 
+                <div class="buttons">
+                    <button class="button--post"></button>
+                    <button class="button--delete"></button>
+                    <button class="button--edit"></button>
+                </div>
+        </div>
     </div>
     <footer class="footer">
         <!-- add github link -->
@@ -60,6 +64,6 @@
         <p>Esther Sanders</p>
         <p>copyright2020</p>
     </footer>
-    
+    <script type="module" src="./scripts/main.js">
 </body>
 </html>

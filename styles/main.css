@@ -1,3 +1,16 @@
+.content {
+    display: flex;
+
+}
+.pageleft {
+    flex: 2;
+}
+
+.pageright {
+    flex: 1;
+}
+
+
 header {
 
 }
@@ -11,11 +24,11 @@ header {
     
 }
 
-.journalmain{
+/* .journalmain{
     display: flex;
     flex-direction: column;
-    
-}
+   
+} */
 .journalDate {
 
 
