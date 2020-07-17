@@ -1,5 +1,52 @@
-.journalmain{
+.content {
+    display: flex;
+
+}
+.pageleft {
+    flex: 2;
+}
+
+.pageright {
+    flex: 1;
+}
+
+header {
+
+}
+.siteLogo {
+
+}
+.name {
+
+}
+.siteTitle {
+    
+}
+
+/* .journalmain{
     display: flex;
     flex-direction: column;
+   
+} */
+#entryLog {
+
+}
+.journalDate {
+
+}
+
+.journalConcepts {
+
+}
+.journalEntry {
+
+}
+.journalMood {
+
+}
+.delete {
+
+}
+.edit {
     
 }
