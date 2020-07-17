@@ -10,7 +10,6 @@
     flex: 1;
 }
 
-
 header {
 
 }
@@ -29,8 +28,10 @@ header {
     flex-direction: column;
    
 } */
-.journalDate {
+#entryLog {
 
+}
+.journalDate {
 
 }
 
@@ -42,4 +43,10 @@ header {
 }
 .journalMood {
 
+}
+.delete {
+
+}
+.edit {
+    
 }
