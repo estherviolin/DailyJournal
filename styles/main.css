@@ -9,6 +9,15 @@
 .pageright {
     flex: 1;
 }
+.journalForm{
+    display: flex;
+    flex-direction: column;
+   
+} 
+.inputWrapper label {
+    display: block;
+
+}
 
 header {
 
@@ -23,11 +32,7 @@ header {
     
 }
 
-/* .journalmain{
-    display: flex;
-    flex-direction: column;
-   
-} */
+ 
 #entryLog {
 
 }

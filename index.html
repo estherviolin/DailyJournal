@@ -12,6 +12,38 @@
         <img class="siteLogo" src=""/>
         <h2 class="name">Esther Sanders</h2>
 </header>
+    <form action= "" class="journalForm">
+        <fieldset>
+            <div class="inputWrapper">
+            <label for="journalDate">Date of entry</label>
+            <input type ="date" name="journalDate" id="journalDate">
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="inputWrapper">
+            <label for="conceptsCovered">Concepts covered</label>
+            <input type="text" name="conceptsCovered" id="conceptsCovered">
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="inputWrapper">
+            <label for="journalEntry">Journal Entry</label>
+            <input type="textarea" name="journalEntry" id="journalEntry">
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="inputWrapper">
+            <label for="mood">Mood for the day</label>
+            <select name="mood" id="mood">
+                <option value="upbeat">Happy</option>
+                <option value="frustrated">Upbeat</option>
+                <option value="tired">Tired</option>
+                <option value="OK">OK</option>
+            </select>
+            </div>
+        </fieldset>
+        <input type="submit" value="Submit">
+    </form>
     <div class="content">
        <div class="pageleft">
        <div id="entryLog"></div>
