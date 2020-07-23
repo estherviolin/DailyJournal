@@ -20,18 +20,21 @@ export const EntryListComponent = () => {
     // DOM reference to where all entries will be rendered
     const entryLog = document.querySelector("#entryLog")
     
-    let EntryHTMLReps = ""
-    for (const entry of entries) {
-        /*
-            Invoke the component that returns an
-            HTML representation of a single entry
-        */    
-       EntryHTMLReps += JournalEntryComponent(entry)
+    // let EntryHTMLReps = ""
+    // for (const entry of entries) {
+    //     /*
+    //         Invoke the component that returns an
+    //         HTML representation of a single entry
+    //     */    
+    //    EntryHTMLReps += JournalEntryComponent(entry)
        
-    }
+    // }
+    // 
     entryLog.innerHTML += `
 
-    <article>${EntryHTMLReps}</article>
+    <article>
+        ${entries.map(entry => JournalEntryComponent(entry))}
+    </article>
     
     `
 }
