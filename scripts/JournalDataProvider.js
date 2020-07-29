@@ -1,43 +1,39 @@
-/*
- *   Journal data provider for Daily Journal application
- *
- *      Holds the raw data about each entry and exports
- *      functions that other modules can use to filter
- *      the entries for different purposes.
- */
+let entries = []
 
-// This is the original data.
-const journal = [
-    {
-        id: 1,
-        date: "07/12/2020",
-        concept: "GitHub",
-        entry: "we practiced the GitHub workflow for group projects",
-        mood: "alert"
-    },
-    {
-        id: 2,
-        date: "07/14/2020",
-        concept: "JavaScript",
-        entry: "We talked about how to use JavaScript to dynamically populate our page",
-        mood: "Ok"
-    },
-    {
-        id: 3,
-        date: "07/15/2020",
-        concept: "JavaScript",
-        entry: "how to import and export from one module to another",
-        mood: "tired"
-    }
+const eventHub = document.querySelector(".content")
 
-]
+//function to dispatch change event that app state changed
+const dispatchStateChangeEvent = () => {
+    const entryStateChangedEvent = new CustomEvent("entryStateChanged")
+    eventHub.dispatchEvent(entryStateChangedEvent)
+}
 
-/*
-    You export a function that provides a version of the
-    raw data in the format that you want
-*/
+//function to get entries from the API
+export const getEntries = () => {
+    return fetch("http://localhost:3000/entries")
+        //turn it into JSON
+        .then(response => response.json())
+        .then(parsedEntries => {
+            entries = parsedEntries            
+        })
+}
+
+//function to save entry after entered into form
+export const saveEntry = (entryObj) => {
+    const jsonEntry = JSON.stringify(entryObj) //turn object into string/strings
+    return fetch("http://localhost:3000/entries", {
+        method: "POST",
+        headers: {
+            "Content-Type": "applicaiton/json"
+        },
+        body: entryNote
+    })
+    .then(getEntries)
+    .then(dispatchStateChangeEvent)
+}
+
 export const useJournalEntries = () => {
-    const sortedByDate = journal.sort(
+    const sortedByDate = entries.sort(
         (currentEntry, nextEntry) =>
             Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
     )

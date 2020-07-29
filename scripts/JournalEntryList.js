@@ -1,18 +1,17 @@
-/*
- *  Purpose:
- *    To render as many journal entry components as
- *    there are items in the collection exposed by the
- *    data provider component
- */
-//the function that makes a copy of the journal entry array
-import { useJournalEntries } from "./JournalDataProvider.js"
-
-//the function that turns an object into HTML
+import { getEntries, useJournalEntries } from "./JournalDataProvider.js"
 import { JournalEntryComponent } from "./JournalEntry.js"
 
+const contentTarget = document.querySelector(".previousEntries")
+const eventHub = document.querySelector(".content")
+
+//add event listener for when show entries button is clicked
+eventHub.addEventListener("showEntriesClicked", customEvent => {
+    EntryListComponent()
+})
+
+//hide entries next
 
 //function that iterates through array and turns into HTML list
-
 export const EntryListComponent = () => {
     // Use the journal entry data from the data provider component
     const entries = useJournalEntries()
