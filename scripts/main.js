@@ -1,5 +1,7 @@
-import {EntryListComponent} from "./JournalEntryList.js"
+// import {EntryListComponent} from "./JournalEntryList.js"
+import {ShowEntriesButton} from "./ShowEntriesButton.js"
 
-EntryListComponent()
+// EntryListComponent()
+ShowEntriesButton()
 
 
