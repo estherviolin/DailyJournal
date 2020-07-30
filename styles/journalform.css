@@ -1,0 +1,39 @@
+.journalForm{
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 2rem 2rem 2rem;
+    max-width: 768px;
+    color: white;
+    background-color: #6B7A8F;
+    border:  .2rem solid white;
+    padding: 1rem;
+    font-family: 'Raleway', sans-serif;
+   
+} 
+.inputWrapper label {
+    display: block;
+
+}
+.journalDate {
+
+}
+.pageleft {
+  
+    
+}
+
+.journalConcepts {
+
+}
+.journalEntry {
+
+}
+.journalMood {
+
+}
+.delete {
+
+}
+.edit {
+    
+}

@@ -8,62 +8,28 @@
 </head>
 <body>
     <header>
-        <!-- add logo -->
-        <img class="siteLogo" src=""/>
+        <div class="header">
+        <img class="siteLogo" src="./images/DJWhite.png"/>
         <h2 class="name">Esther Sanders</h2>
+        </div>
 </header>
-    <form action= "" class="journalForm">
-        <fieldset>
-            <div class="inputWrapper">
-            <label for="journalDate">Date of entry</label>
-            <input type ="date" name="journalDate" id="journalDate">
-            </div>
-        </fieldset>
-        <fieldset>
-            <div class="inputWrapper">
-            <label for="conceptsCovered">Concepts covered</label>
-            <input type="text" name="conceptsCovered" id="conceptsCovered">
-            </div>
-        </fieldset>
-        <fieldset>
-            <div class="inputWrapper">
-            <label for="journalEntry">Journal Entry</label>
-            <input type="textarea" name="journalEntry" id="journalEntry">
-            </div>
-        </fieldset>
-        <fieldset>
-            <div class="inputWrapper">
-            <label for="mood">Mood for the day</label>
-            <select name="mood" id="mood">
-                <option value="upbeat">Happy</option>
-                <option value="frustrated">Upbeat</option>
-                <option value="tired">Tired</option>
-                <option value="OK">OK</option>
-            </select>
-            </div>
-        </fieldset>
-        <input type="submit" value="Submit">
-    </form>
     <div class="content">
-       <div class="pageleft">
-       <div id="entryLog"></div>
-       </div>
+        <div class="pageleft">
+            <form action= "" class="journalForm"></form>
+        </div>
        <div class="pageright">
                 <h2>Previous Entries</h2>
-                <div class="previousEntries"></div>
-                <div class="buttons">
-                    <button class="button--post"></button>
-                    <button class="button--delete"></button>
-                    <button class="button--edit"></button>
-                </div>
+                <div class="previousEntries">  
+                    <div class="button entriesButton"></div>
+                    <div class="displayEntries"></div>
+                </div>             
         </div>
     </div>
    
     <footer class="footer">
-        <!-- add github link -->
-        <link href=github>
         <p>Esther Sanders</p>
-        <p>copyright2020</p>
+        <a class="url" target=_blank href="https://github.com/estherviolin">See my GitHub</a>
+        <p>copyright 2020</p>
     </footer>
     <script type="module" src="./scripts/main.js"></script>
 </body>

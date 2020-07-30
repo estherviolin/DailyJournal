@@ -9,8 +9,10 @@ export const JournalEntryComponent = (entry) => {
             <p class="journalConcept">Concept(s): ${entry.concept}</p>
             <p class="journalStuff">${entry.entry}</p>
             <p class="journalMood">Mood: ${entry.mood}</p>
-            <button type="button" class="delete">Edit</button>
-            <button type="button" class="edit">Delete</button>
+            <div class="buttons">
+                <button type="button" class="button delete">Edit</button>
+                <button type="button" class="button edit">Delete</button>
+            </div>
         </section>
     `
 }

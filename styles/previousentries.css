@@ -1,0 +1,28 @@
+.pageright {
+    margin: 2rem;
+    max-width: 768px;
+    color: white;
+    background-color: #F7882F;
+    border:  .2rem solid white;
+    padding: 1rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+.displayEntries {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;  
+
+}
+
+.journalEntry {
+    border: .2rem solid white;
+    flex-basis: 20%;
+    width: 30%;
+    height: auto;
+    padding: .2rem;
+    margin: .5rem;
+
+}
+
+
