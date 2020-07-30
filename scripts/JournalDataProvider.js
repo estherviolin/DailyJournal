@@ -24,9 +24,9 @@ export const saveEntry = (entryObj) => {
     return fetch("http://localhost:3000/entries", {
         method: "POST",
         headers: {
-            "Content-Type": "applicaiton/json"
+            "Content-Type": "application/json"
         },
-        body: entryNote
+        body: jsonEntry
     })
     .then(getEntries)
     .then(dispatchStateChangeEvent)

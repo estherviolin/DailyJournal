@@ -1,27 +1,32 @@
 {
-    "entries": [
-        {
-            "id": 1,
-            "date": "07/12/2020",
-            "concept": "GitHub",
-            "entry": "we practiced the GitHub workflow for group projects",
-            "mood": "alert"
-        },
-        {
-            "id": 2,
-            "date": "07/14/2020",
-            "concept": "JavaScript",
-            "entry": "We talked about how to use JavaScript to dynamically populate our page",
-            "mood": "Ok"
-        },
-        {
-            "id": 3,
-            "date": "07/15/2020",
-            "concept": "JavaScript",
-            "entry": "how to import and export from one module to another",
-            "mood": "tired"
-        }
-    
-    ]
-
+  "entries": [
+    {
+      "id": 1,
+      "date": "07/12/2020",
+      "concept": "GitHub",
+      "entry": "we practiced the GitHub workflow for group projects",
+      "mood": "alert"
+    },
+    {
+      "id": 2,
+      "date": "07/14/2020",
+      "concept": "JavaScript",
+      "entry": "We talked about how to use JavaScript to dynamically populate our page",
+      "mood": "Ok"
+    },
+    {
+      "id": 3,
+      "date": "07/15/2020",
+      "concept": "JavaScript",
+      "entry": "how to import and export from one module to another",
+      "mood": "tired"
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "upbeat",
+      "id": 4
+    }
+  ]
 }

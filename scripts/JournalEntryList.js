@@ -1,39 +1,57 @@
 import { getEntries, useJournalEntries } from "./JournalDataProvider.js"
-import { JournalEntryComponent } from "./JournalEntry.js"
+import { JournalEntryComponent } from "./EntryHTMLConverter.js"
+import { HideEntriesButton } from "./HideEntriesButton.js"
+import { ShowEntriesButton } from "./ShowEntriesButton.js"
 
-const contentTarget = document.querySelector(".previousEntries")
+const contentTarget = document.querySelector(".displayEntries")
 const eventHub = document.querySelector(".content")
 
+
+
+let entries = []
 //add event listener for when show entries button is clicked
 eventHub.addEventListener("showEntriesClicked", customEvent => {
     EntryListComponent()
+    //also render hide entries button
+    HideEntriesButton()
 })
 
 //hide entries next
+eventHub.addEventListener("hideEntriesClicked", hideButtonClicked => {
+    contentTarget.innerHTML = `
+    `
+    ShowEntriesButton()
+    
+    
+})
 
 //function that iterates through array and turns into HTML list
 export const EntryListComponent = () => {
     // Use the journal entry data from the data provider component
-    const entries = useJournalEntries()
+    getEntries()//from the API
+        .then(() => {
+            const entries = useJournalEntries()
+            render(entries) //render to DOM
+        })
+   
+    }
 
-    // DOM reference to where all entries will be rendered
-    const entryLog = document.querySelector("#entryLog")
-    
-    // let EntryHTMLReps = ""
-    // for (const entry of entries) {
-    //     /*
-    //         Invoke the component that returns an
-    //         HTML representation of a single entry
-    //     */    
-    //    EntryHTMLReps += JournalEntryComponent(entry)
-       
-    // }
-    // 
-    entryLog.innerHTML += `
+    //render function
+const render = (entriesArray) => {
+        //loop through entries array returning each entry as passed through converter function
+        const allEntriesHTML = entriesArray.map(
+            (currentEntryObj) => {
+                return JournalEntryComponent(currentEntryObj) 
+                }
+        ).join("") //remove commas
+        
+        // DOM reference to where all entries will be rendered
+        contentTarget.innerHTML += allEntriesHTML
+    }
 
-    <article>
-        ${entries.map(entry => JournalEntryComponent(entry))}
-    </article>
+
+      
     
-    `
-}
+
+
+   
