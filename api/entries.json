@@ -22,9 +22,9 @@
       "mood": "tired"
     },
     {
-      "date": "",
-      "concept": "",
-      "entry": "",
+      "date": "2020-07-30",
+      "concept": "test",
+      "entry": "test",
       "mood": "upbeat",
       "id": 4
     }

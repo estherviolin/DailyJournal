@@ -1,6 +1,6 @@
 //journal form component
 
-import {saveEntry} from "./JournalDataProvider.js"
+import { saveEntry } from "./JournalDataProvider.js"
 
 const eventHub = document.querySelector(".content")
 const contentTarget = document.querySelector(".journalForm")
@@ -12,17 +12,17 @@ eventHub.addEventListener("click", clickEvent => {
         const entryContent = document.querySelector("#journalEntry")
         const entryMood = document.querySelector("#journalMood")
         const entryDate = document.querySelector("#journalDate")
-    
 
-    const newEntry = {
-        date: entryDate.value,
-        concept: entryConcept.value,
-        entry: entryContent.value,
-        mood: entryMood.value
+
+        const newEntry = {
+            date: entryDate.value,
+            concept: entryConcept.value,
+            entry: entryContent.value,
+            mood: entryMood.value
+        }
+
+        saveEntry(newEntry)
     }
-
-    saveEntry(newEntry)
-}
 })
 
 const render = () => {

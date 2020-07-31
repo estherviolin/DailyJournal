@@ -16,6 +16,12 @@ eventHub.addEventListener("showEntriesClicked", customEvent => {
     HideEntriesButton()
 })
 
+//listen for change to app state when save is clicked and update HTML rendering
+eventHub.addEventListener("entryStateChanged", () => {
+    const newEntries = useJournalEntries()
+    render(newEntries)
+})
+
 //hide entries next
 eventHub.addEventListener("hideEntriesClicked", hideButtonClicked => {
     contentTarget.innerHTML = `
@@ -46,7 +52,7 @@ const render = (entriesArray) => {
         ).join("") //remove commas
         
         // DOM reference to where all entries will be rendered
-        contentTarget.innerHTML += allEntriesHTML
+        contentTarget.innerHTML = allEntriesHTML
     }
 
 
