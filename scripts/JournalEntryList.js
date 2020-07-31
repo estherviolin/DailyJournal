@@ -9,7 +9,7 @@ const eventHub = document.querySelector(".content")
 
 
 let entries = []
-//add event listener for when show entries button is clicked
+// add event listener for when show entries button is clicked
 eventHub.addEventListener("showEntriesClicked", customEvent => {
     EntryListComponent()
     //also render hide entries button
@@ -41,6 +41,7 @@ export const EntryListComponent = () => {
         })
    
     }
+   
 
     //render function
 const render = (entriesArray) => {
