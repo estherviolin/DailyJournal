@@ -9,11 +9,17 @@ const eventHub = document.querySelector(".content")
 
 
 let entries = []
-//add event listener for when show entries button is clicked
+// add event listener for when show entries button is clicked
 eventHub.addEventListener("showEntriesClicked", customEvent => {
     EntryListComponent()
     //also render hide entries button
     HideEntriesButton()
+})
+
+//listen for change to app state when save is clicked and update HTML rendering
+eventHub.addEventListener("entryStateChanged", () => {
+    const newEntries = useJournalEntries()
+    render(newEntries)
 })
 
 //hide entries next
@@ -35,6 +41,7 @@ export const EntryListComponent = () => {
         })
    
     }
+   
 
     //render function
 const render = (entriesArray) => {
@@ -46,7 +53,7 @@ const render = (entriesArray) => {
         ).join("") //remove commas
         
         // DOM reference to where all entries will be rendered
-        contentTarget.innerHTML += allEntriesHTML
+        contentTarget.innerHTML = allEntriesHTML
     }
 
 
