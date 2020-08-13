@@ -1,6 +1,7 @@
 //journal form component
 
 import { saveEntry } from "./JournalDataProvider.js"
+import {useMoods, getMoods} from "./MoodDataProvider.js"
 
 const eventHub = document.querySelector(".content")
 const contentTarget = document.querySelector(".journalForm")
@@ -13,19 +14,26 @@ eventHub.addEventListener("click", clickEvent => {
         const entryMood = document.querySelector("#journalMood")
         const entryDate = document.querySelector("#journalDate")
 
+        const moodId = parseInt(entryMood.value)
+ 
+        if (moodId !==0) {
 
         const newEntry = {
             date: entryDate.value,
             concept: entryConcept.value,
             entry: entryContent.value,
-            mood: entryMood.value
+            moodId: parseInt(entryMood.value)
         }
 
         saveEntry(newEntry)
+        }
+        else {
+            window.alert("Please choose a mood")
+        }
     }
 })
 
-const render = () => {
+const render = (moods) => {
     contentTarget.innerHTML = `
         <h3 class="newEntryHeader">New Entry:</h3>
         <fieldset>
@@ -50,11 +58,14 @@ const render = () => {
             <div class="inputWrapper">
             <label for="mood">Mood for the day</label>
             <select name="mood" id="journalMood">
-                <option value="upbeat">Upbeat</option>
-                <option value="frustrated">Frustrated</option>
-                <option value="tired">Tired</option>
-                <option value="OK">OK</option>
-            </select>
+                <option value="0">Select a mood...</option>
+                ${
+                    moods.map(
+                        (mood) => {
+                            return `<option value="${ mood.id }">${ mood.label }</option>`
+                        }
+                    ).join("")
+                }
             </div>
         </fieldset>
         <input class="button" type="submit" value="Submit" id="Submit">
@@ -65,5 +76,10 @@ const render = () => {
 }
 
 export const JournalForm = () => {
-    render()
+    getMoods()
+        .then(() => {
+            const moods = useMoods()
+            render(moods)
+        })
+    
 }

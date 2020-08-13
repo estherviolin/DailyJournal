@@ -10,7 +10,7 @@ const dispatchStateChangeEvent = () => {
 
 //function to get entries from the API
 export const getEntries = () => {
-    return fetch("http://localhost:3000/entries")
+    return fetch("http://localhost:8088/entries?_expand=mood")
         //turn it into JSON
         .then(response => response.json())
         .then(parsedEntries => {
@@ -21,7 +21,7 @@ export const getEntries = () => {
 //function to save entry after entered into form
 export const saveEntry = (entryObj) => {
     const jsonEntry = JSON.stringify(entryObj) //turn object into string/strings
-    return fetch("http://localhost:3000/entries", {
+    return fetch("http://localhost:8088/entries", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

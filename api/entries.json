@@ -5,63 +5,71 @@
       "date": "07/12/2020",
       "concept": "GitHub",
       "entry": "we practiced the GitHub workflow for group projects",
-      "mood": "alert"
+      "moodId": 5
     },
     {
       "id": 2,
       "date": "07/14/2020",
       "concept": "JavaScript",
       "entry": "We talked about how to use JavaScript to dynamically populate our page",
-      "mood": "Ok"
+      "moodId": 4
     },
     {
       "id": 3,
       "date": "07/15/2020",
       "concept": "JavaScript",
       "entry": "how to import and export from one module to another",
-      "mood": "tired"
-    },
-    {
-      "date": "2020-07-30",
-      "concept": "test",
-      "entry": "test",
-      "mood": "upbeat",
-      "id": 4
+      "moodId": 3
     },
     {
       "date": "2020-07-28",
       "concept": "test",
       "entry": "as;dfkjasl;djf",
-      "mood": "upbeat",
+      "moodId": 1,
       "id": 5
     },
     {
       "date": "2020-07-21",
       "concept": "test",
       "entry": "testing form",
-      "mood": "upbeat",
+      "moodId": 1,
       "id": 6
     },
     {
       "date": "2020-07-30",
       "concept": "another test",
       "entry": "another test",
-      "mood": "upbeat",
+      "moodId": 1,
       "id": 7
     },
     {
-      "date": "2020-07-30",
-      "concept": "why do entries hide",
-      "entry": "why",
-      "mood": "upbeat",
+      "date": "2020-08-13",
+      "concept": "normalizing APIs",
+      "entry": "PKs FKs",
+      "moodId": 4,
       "id": 8
+    }
+  ],
+  "moods": [
+    {
+      "id": 1,
+      "label": "upbeat"
     },
     {
-      "date": "2020-07-29",
-      "concept": "empty the form",
-      "entry": "help",
-      "mood": "upbeat",
-      "id": 9
+      "id": 2,
+      "label": "frustrated"
+    },
+    {
+      "id": 3,
+      "label": "tired"
+    },
+    {
+      "id": 4,
+      "label": "OK"
+    },
+    {
+      "id": 5,
+      "label": "alert"
     }
   ]
 }
