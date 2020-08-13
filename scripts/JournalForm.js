@@ -14,15 +14,22 @@ eventHub.addEventListener("click", clickEvent => {
         const entryMood = document.querySelector("#journalMood")
         const entryDate = document.querySelector("#journalDate")
 
+        const moodId = parseInt(entryMood.value)
+ 
+        if (moodId !==0) {
 
         const newEntry = {
             date: entryDate.value,
             concept: entryConcept.value,
             entry: entryContent.value,
-            mood: entryMood.value
+            moodId: parseInt(entryMood.value)
         }
 
         saveEntry(newEntry)
+        }
+        else {
+            window.alert("Please choose a mood")
+        }
     }
 })
 
@@ -55,7 +62,7 @@ const render = (moods) => {
                 ${
                     moods.map(
                         (mood) => {
-                            return `<option id="mood--${ mood.id }">${ mood.label }</option>`
+                            return `<option value="${ mood.id }">${ mood.label }</option>`
                         }
                     ).join("")
                 }
