@@ -10,7 +10,7 @@ const dispatchStateChangeEvent = () => {
 
 //function to get entries from the API
 export const getEntries = () => {
-    return fetch("http://localhost:3000/entries")
+    return fetch("http://localhost:3000/entries?_expand=mood")
         //turn it into JSON
         .then(response => response.json())
         .then(parsedEntries => {
