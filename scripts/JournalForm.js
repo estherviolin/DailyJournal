@@ -1,10 +1,29 @@
 //journal form component
 
-import { saveEntry } from "./JournalDataProvider.js"
+import { saveEntry, useJournalEntries, editEntry } from "./JournalDataProvider.js"
 import {useMoods, getMoods} from "./MoodDataProvider.js"
 
 const eventHub = document.querySelector(".content")
 const contentTarget = document.querySelector(".journalForm")
+
+eventHub.addEventListener("editClicked", customEvent => {
+    const allEntries = useJournalEntries()
+    const entryId = customEvent.detail.entryId
+    const entryObj = allEntries.find(entryObj => entryId === entryObj.id)
+
+    const entryConcept = document.querySelector("#journalConcepts")
+    const entryContent = document.querySelector("#journalEntry")
+    const entryMood = document.querySelector("#journalMood")
+    const entryDate = document.querySelector("#journalDate")
+    const id = document.querySelector("#entryId")
+
+    entryConcept.value = entryObj.concept
+    entryContent.value = entryObj.entry
+    entryMood.value = entryObj.moodId
+    entryDate.value = entryObj.date
+    id.value = parseInt(entryId)
+    
+})
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "Submit") {
@@ -13,25 +32,38 @@ eventHub.addEventListener("click", clickEvent => {
         const entryContent = document.querySelector("#journalEntry")
         const entryMood = document.querySelector("#journalMood")
         const entryDate = document.querySelector("#journalDate")
+        const id = document.querySelector("#journalId")
 
         const moodId = parseInt(entryMood.value)
  
-        if (moodId !==0) {
+        if (entryConcept.value && entryContent.value && entryMood.value && entryDate.value) {
+            const id = document.querySelector("#entryId")
+            if (id.value === "") {
+                const newEntry = {
+                    date: entryDate.value,
+                    concept: entryConcept.value,
+                    entry: entryContent.value,
+                    moodId: parseInt(entryMood.value)
+                }
 
-        const newEntry = {
-            date: entryDate.value,
-            concept: entryConcept.value,
-            entry: entryContent.value,
-            moodId: parseInt(entryMood.value)
-        }
-
-        saveEntry(newEntry)
-        }
-        else {
-            window.alert("Please choose a mood")
-        }
+                saveEntry(newEntry)
+            } else {
+                    const editedEntry = {
+                        date: entryDate.value,
+                        concept: entryConcept.value,
+                        entry: entryContent.value,
+                        moodId:entryMood.value,
+                        id: parseInt(id.value)
+                    }
+                    editEntry(editedEntry)
+                    id.value=""
+                }
+                } else {
+                    window.alert("Please fill all fields")
+                }
     }
 })
+
 
 const render = (moods) => {
     contentTarget.innerHTML = `
@@ -67,6 +99,7 @@ const render = (moods) => {
                     ).join("")
                 }
             </div>
+            <input type="hidden" name="entryId" id="entryId">
         </fieldset>
         <input class="button" type="submit" value="Submit" id="Submit">
 
@@ -83,3 +116,6 @@ export const JournalForm = () => {
         })
     
 }
+
+
+

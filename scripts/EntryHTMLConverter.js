@@ -10,7 +10,7 @@ export const JournalEntryComponent = (entry) => {
             <p class="journalStuff">${entry.entry}</p>
             <p class="journalMood">Mood: ${entry.mood.label}</p>
             <div class="buttons">
-                <button type="button" class="button edit">Edit</button>
+                <button type="button" class="button edit" id="edit--${entry.id}">Edit</button>
                 <button type="button" class="button delete" id="delete--${entry.id}">Delete</button>
             </div>
         </section>
