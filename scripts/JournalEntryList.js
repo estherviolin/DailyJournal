@@ -1,4 +1,4 @@
-import { getEntries, useJournalEntries } from "./JournalDataProvider.js"
+import { getEntries, useJournalEntries, deleteEntry } from "./JournalDataProvider.js"
 import { JournalEntryComponent } from "./EntryHTMLConverter.js"
 import { HideEntriesButton } from "./HideEntriesButton.js"
 import { ShowEntriesButton } from "./ShowEntriesButton.js"
@@ -31,6 +31,16 @@ eventHub.addEventListener("hideEntriesClicked", hideButtonClicked => {
     
 })
 
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("delete--")) {
+        const [prompt, entryId] = clickEvent.target.id.split("--")
+
+        //function to delete entry, imported from data provider
+
+        deleteEntry(entryId)
+    }
+})
+
 //function that iterates through array and turns into HTML list
 export const EntryListComponent = () => {
     // Use the journal entry data from the data provider component
@@ -46,7 +56,7 @@ export const EntryListComponent = () => {
     //render function
 const render = (entriesArray) => {
         //loop through entries array returning each entry as passed through converter function
-        const allEntriesHTML = entriesArray.map(
+        const allEntriesHTML = entriesArray.reverse().map(
             (currentEntryObj) => {
                 return JournalEntryComponent(currentEntryObj) 
                 }
