@@ -38,8 +38,8 @@
     {
       "date": "2020-07-30",
       "concept": "another test",
-      "entry": "another test",
-      "moodId": 1,
+      "entry": "another test edited",
+      "moodId": "1",
       "id": 7
     },
     {

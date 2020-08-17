@@ -9,7 +9,7 @@ const contentTarget = document.querySelector(".journalForm")
 eventHub.addEventListener("editClicked", customEvent => {
     const allEntries = useJournalEntries()
     const entryId = customEvent.detail.entryId
-    const entryObj = allEntries.find(entryObj => entryId === entryObj.id)
+    const entryObjToEdit = allEntries.find(entryObj => entryId === entryObj.id)
 
     const entryConcept = document.querySelector("#journalConcepts")
     const entryContent = document.querySelector("#journalEntry")
@@ -17,10 +17,10 @@ eventHub.addEventListener("editClicked", customEvent => {
     const entryDate = document.querySelector("#journalDate")
     const id = document.querySelector("#entryId")
 
-    entryConcept.value = entryObj.concept
-    entryContent.value = entryObj.entry
-    entryMood.value = entryObj.moodId
-    entryDate.value = entryObj.date
+    entryConcept.value = entryObjToEdit.concept
+    entryContent.value = entryObjToEdit.entry
+    entryMood.value = entryObjToEdit.moodId
+    entryDate.value = entryObjToEdit.date
     id.value = parseInt(entryId)
     
 })
