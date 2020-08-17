@@ -1,4 +1,4 @@
-import { getEntries, useJournalEntries, deleteEntry } from "./JournalDataProvider.js"
+import { getEntries, useJournalEntries, deleteEntry, editEntry } from "./JournalDataProvider.js"
 import { JournalEntryComponent } from "./EntryHTMLConverter.js"
 import { HideEntriesButton } from "./HideEntriesButton.js"
 import { ShowEntriesButton } from "./ShowEntriesButton.js"
@@ -29,6 +29,21 @@ eventHub.addEventListener("hideEntriesClicked", hideButtonClicked => {
     ShowEntriesButton()
     
     
+})
+
+//event listener for edit button
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("edit--")) {
+        const [prompt, entryId] = clickEvent.target.id.split("--")
+        const editClicked = new CustomEvent("editClicked", {
+        detail: {
+            entryId: parseInt(entryId)
+        }
+    })
+    eventHub.dispatchEvent(editClicked)
+}
+  
+   
 })
 
 eventHub.addEventListener("click", clickEvent => {
