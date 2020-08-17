@@ -18,6 +18,15 @@ export const getEntries = () => {
         })
 }
 
+//function to delete an entry
+export const deleteEntry = (noteId) => {
+    return fetch(`http://localhost:8088/entries/${noteId}`, {
+        method: "DELETE"
+    })
+    .then(getEntries)
+    .then(dispatchStateChangeEvent)
+}
+
 //function to save entry after entered into form
 export const saveEntry = (entryObj) => {
     const jsonEntry = JSON.stringify(entryObj) //turn object into string/strings
