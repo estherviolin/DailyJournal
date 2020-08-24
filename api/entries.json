@@ -26,28 +26,21 @@
       "concept": "test",
       "entry": "edited: as;dfkjasl;djf",
       "moodId": "1",
-      "id": 5
-    },
-    {
-      "date": "2020-07-21",
-      "concept": "test",
-      "entry": "testing form",
-      "moodId": 1,
-      "id": 6
+      "id": 4
     },
     {
       "date": "2020-07-30",
       "concept": "another test",
       "entry": "another test edited",
       "moodId": "1",
-      "id": 7
+      "id": 5
     },
     {
       "date": "2020-08-13",
       "concept": "normalizing APIs",
       "entry": "PKs FKs edited",
       "moodId": "4",
-      "id": 8
+      "id": 6
     }
   ],
   "moods": [
@@ -71,5 +64,59 @@
       "id": 5,
       "label": "alert"
     }
-  ]
+  ],
+  "tags": [
+    {
+        "id": 1,
+        "subject": "API"
+    },
+    {
+        "id": 2,
+        "subject": "components"
+    },
+    {
+        "id": 3,
+        "subject": "fetch"
+    },
+    {
+      "id": 4,
+      "subject": "Github"
+    },
+    {
+      "id": 5,
+      "subject": "ERD"
+    }
+],
+"entrytags": [
+  {
+      "id": 1,
+      "entryId": 1,
+      "tagId": 4
+  },
+  {
+      "id": 2,
+      "entryId": 2,
+      "tagId": 2
+  },
+  {
+      "id": 3,
+      "entryId": 3,
+      "tagId": 2
+  },
+  {
+      "id": 4,
+      "entryId": 4,
+      "tagId": 3
+  },
+  {
+    "id": 5,
+    "entryId": 5,
+    "tagId": 1
+},
+{
+  "id": 6,
+  "entryId": 6,
+  "tagId": 5
+}
+]
 }

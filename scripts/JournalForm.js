@@ -99,6 +99,7 @@ const render = (moods) => {
                     ).join("")
                 }
             </div>
+            <input type="text" placeholder="Enter tags separated by a comma" value="${tag.id}></input>
             <input type="hidden" name="entryId" id="entryId">
         </fieldset>
         <input class="button" type="submit" value="Submit" id="Submit">
