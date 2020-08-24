@@ -2,6 +2,8 @@ import { getEntries, useJournalEntries, deleteEntry, editEntry } from "./Journal
 import { JournalEntryComponent } from "./EntryHTMLConverter.js"
 import { HideEntriesButton } from "./HideEntriesButton.js"
 import { ShowEntriesButton } from "./ShowEntriesButton.js"
+import {getTags, useTags} from "./TagDataProvider.js"
+import {getEntryTags, useEntryTags} from "./EntryTagsDataProvider.js"
 
 const contentTarget = document.querySelector(".displayEntries")
 const eventHub = document.querySelector(".content")
@@ -67,12 +69,17 @@ export const EntryListComponent = () => {
    
     }
    
-
     //render function
 const render = (entriesArray) => {
+    // getTags()
+    //     .then(getEntryTags)
+    //     .then(() => {
+    //         const tags = useTags()
+    //         const entryTagRelationships = useEntryTags()
+    //     })
         //loop through entries array returning each entry as passed through converter function
         const allEntriesHTML = entriesArray.reverse().map(
-            (currentEntryObj) => {
+            (currentEntryObj) => {             
                 return JournalEntryComponent(currentEntryObj) 
                 }
         ).join("") //remove commas
@@ -82,8 +89,13 @@ const render = (entriesArray) => {
     }
 
 
-      
+
+
+    // /* unecessary for render?
+    // const relationshipObjsforthisentryObj = entryTagRelationships.filter(etr => etr.entryId === currentEntryObj.id) //arr of rel objs
+    // const relatedTags = relationshipObjsforthisentryObj.map(etr => {
+    //     return tags.find(tag => tag.id === etr.tagId) //arr of related tag objs
+    // })
     
 
 
-   
